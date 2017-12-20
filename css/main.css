@@ -21,7 +21,7 @@ img {
   display: none;
 }
 
-.carousel-content.active {
+.carousel-content.visible {
   display: block;
 }
 
