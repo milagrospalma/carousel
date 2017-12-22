@@ -1,12 +1,12 @@
 $(document).ready(function() {
   // Declaración e inicialización de variables
   var target = 0;
-  var buttons = $('.control');
-  var previous = $('.previous');
-  var next = $('.next');
+  var $buttons = $('.control');
+  var $previous = $('.previous');
+  var $next = $('.next');
 
   // Cuando se selecciona un botón
-  buttons.click(function() {
+  $buttons.click(function() {
     // target almacena la posición de la imagen seleccionada
     target = $(this).data('target');
     // console.log(typeof(target));
@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
 
   // Cuando se selecciona en dirección a la izquierda
-  previous.click(function(e) {
+  $previous.click(function(e) {
     e.preventDefault();
     target = target - 1;
     // console.log(target);
@@ -24,7 +24,7 @@ $(document).ready(function() {
   });
 
   // Cuando se selecciona en dirección a la derecha
-  next.click(function(e) {
+  $next.click(function(e) {
     e.preventDefault();
     target = target + 1;
     // console.log(target);
@@ -34,13 +34,13 @@ $(document).ready(function() {
   });
 
   function showImage(target) {
-    var lastSlide = $('.visible');
-    console.log(lastSlide);
-    var slide = $('div[data-slide="' + target + '"]');
-    console.log(slide);
+    var $lastSlide = $('div.active');
+    // console.log($lastSlide);
+    var $slide = $('div[data-slide="' + target + '"]');
+    // console.log($slide);
     // Elimina la clase de la anterior imagen
-    lastSlide.removeClass('visible');
+    $lastSlide.removeClass('active');
     // Agrega la clase a la nueva imagen
-    slide.addClass('visible');
+    $slide.addClass('active');
   }
 });
